@@ -1,0 +1,44 @@
+---
+interface Props {
+  heading?: string;
+  text?: string;
+}
+const { 
+  heading = "Lleve su planta al siguiente nivel.", 
+  text = "Consúltenos sin compromiso sobre su proyecto de lavado. Ofrecemos estudios de eficiencia y ROI personalizados." 
+} = Astro.props;
+---
+
+<section id="contacto" class="py-24 bg-[#0a192f] text-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-red-600/5 skew-x-12 translate-x-20"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-20">
+            <div>
+                <h3 class="text-red-400 font-bold uppercase tracking-widest text-xs mb-4">Contacto Directo</h3>
+                <h2 class="text-5xl font-bold mb-8 leading-tight italic tracking-tighter uppercase">{heading}</h2>
+                <p class="text-gray-400 text-lg mb-12">{text}</p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-6">
+                        <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-red-400 font-bold italic">@</div>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold">Email</p>
+                            <p class="text-xl">info@sermont.es</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl p-10 text-slate-900 shadow-2xl">
+                <form class="space-y-5">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <input type="text" name="nombre" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#d10a3c] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#d10a3c]/10 transition-all" placeholder="Nombre">
+                        <input type="text" name="empresa" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#d10a3c] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#d10a3c]/10 transition-all" placeholder="Empresa">
+                    </div>
+                    <input type="email" name="email" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#d10a3c] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#d10a3c]/10 transition-all" placeholder="Email corporativo">
+                    <textarea rows="4" name="consulta" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#d10a3c] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#d10a3c]/10 transition-all" placeholder="Su consulta..."></textarea>
+                    <button type="submit" class="w-full bg-[#d10a3c] hover:bg-red-700 text-white font-bold py-4 rounded transition-all shadow-lg uppercase text-xs tracking-widest">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

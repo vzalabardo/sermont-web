@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import MachineCard from '../../components/MachineCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectorMiniNav from '../../components/SectorMiniNav.astro';
+import sectors from '../../data/sectors.json';
+import maquinas from '../../data/maquinas.json';
+
+export function getStaticPaths() {
+    return sectors.map((sector) => ({
+        params: { slug: sector.slug },
+        props: { sector }
+    }));
+}
+
+const { sector } = Astro.props;
+
+const sectorMachines = maquinas.filter((m) => m.sectors.includes(sector.slug));
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `${sector.name} | Sermont`,
+    "description": sector.metaDescription,
+    "url": `https://www.sermont.es/sector/${sector.slug}`,
+    "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": sectorMachines.map((m, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": `https://www.sermont.es/maquina/${m.slug}`,
+            "name": m.title
+        }))
+    }
+};
+
+const breadcrumbs = [
+    { label: "Inicio", href: "/" },
+    { label: "Maquinaria", href: "/#industrias" },
+    { label: sector.name }
+];
+---
+
+<BaseLayout
+    title={`${sector.name} | Sermont - Soluciones de Lavado Industrial`}
+    description={sector.metaDescription}
+    ogImage={sector.hero.featuredImage}
+    activePage="sector"
+    jsonLd={jsonLd}
+>
+
+    <!-- BREADCRUMBS & MINI SECTORES -->
+    <div class="pt-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 pt-4">
+            <Breadcrumbs items={breadcrumbs} />
+            <SectorMiniNav activeSlug={sector.slug} />
+        </div>
+    </div>
+
+    <!-- SECCIÓN HERO CATEGORÍA -->
+    <section class="py-24 text-white relative bg-cover bg-center" style={`background: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.75)), url('${sector.hero.bgImage}'); background-size: cover; background-position: center;`}>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-3/5">
+                <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight uppercase italic tracking-tighter">
+                    {sector.hero.title}
+                </h1>
+                <h2 class="text-xl font-bold text-red-500 mb-4 uppercase tracking-widest">{sector.hero.subtitle}</h2>
+                <p class="text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-light">
+                    {sector.hero.description}
+                </p>
+                <a href="#catalogo" class="inline-block border-2 border-white px-8 py-3 rounded text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-[#0a192f] transition">
+                    Ver catálogo de máquinas
+                </a>
+            </div>
+            <div class="md:w-2/5 flex justify-center">
+                <img 
+                    src={sector.hero.featuredImage} 
+                    alt={`Lavautensilios ${sector.name}`} 
+                    class="h-80 w-auto drop-shadow-2xl"
+                    width="480"
+                    height="570"
+                    loading="eager"
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE MÁQUINAS -->
+    <section id="catalogo" class="py-24 bg-[#f8fafc]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl font-black text-[#0a192f] uppercase tracking-tighter mb-4 italic">Lavautensilios e Higiene Industrial</h2>
+                <div class="w-20 h-1 bg-[#d10a3c] mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {sectorMachines.map((machine) => (
+                    <MachineCard
+                        slug={machine.slug}
+                        model={machine.model}
+                        title={machine.title}
+                        subtitle={machine.subtitle}
+                        image={machine.gallery[0]}
+                    />
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <ContactSection 
+        heading={sector.contactHeading} 
+        text={sector.contactText} 
+    />
+
+</BaseLayout>

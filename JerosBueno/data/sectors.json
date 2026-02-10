@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "pharma-cosmetica",
+    "name": "Pharma y Cosmética",
+    "metaDescription": "Soluciones de lavado industrial para la industria farmacéutica y cosmética. Cumplimiento GMP y validación de limpieza.",
+    "hero": {
+      "title": "Pharma y Cosmética",
+      "subtitle": "Máquinas para confiar en la tecnología de lavado.",
+      "description": "Línea completa de sistemas de lavado diseñados bajo normativas GMP. Soluciones para componentes de llenado, reactores, moldes y utensilios de laboratorio que garantizan la eliminación total de residuos y contaminación cruzada.",
+      "bgImage": "/images/sectors/bg-pharma.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    }
+  },
+  {
+    "slug": "industria-lactea",
+    "name": "Industria láctea y quesos",
+    "metaDescription": "Lavadoras industriales para moldes de queso, bandejas y bloque-moldes. Higiene total para productos lácteos.",
+    "hero": {
+      "title": "Industria Láctea y Quesos",
+      "subtitle": "Higiene absoluta para procesos bacteriológicos sensibles.",
+      "description": "El lavado de moldes, multimoldes y bloque-moldes requiere una precisión absoluta para evitar contaminaciones. Nuestros sistemas garantizan la eliminación de grasas y proteínas lácteas con programas térmicos específicos.",
+      "bgImage": "/images/sectors/bg-dairy.jpg",
+      "featuredImage": "https://jeros.com/media/tzlhuq0q/9115_mix.png?rmode=max&width=480&height=570"
+    }
+  },
+  {
+    "slug": "metalurgica-auto",
+    "name": "Metalúrgica y Auto",
+    "metaDescription": "Lavado de piezas mecanizadas, desengrase industrial y limpieza de KLTs para automoción.",
+    "hero": {
+      "title": "Metalúrgica y Automoción",
+      "subtitle": "Potencia de desengrase para la industria pesada.",
+      "description": "Eliminación eficaz de aceites de corte, virutas y grasas industriales. Desde el lavado de cajas KLT logísticas hasta el desengrase de piezas mecanizadas de alta precisión listas para montaje.",
+      "bgImage": "/images/sectors/bg-metal.jpg",
+      "featuredImage": "https://jeros.com/media/dbkjl04s/9117_mix.png?rmode=max&width=480&height=570"
+    }
+  },
+  {
+    "slug": "pallets-bidones",
+    "name": "Pallets y Bidones",
+    "metaDescription": "Sistemas de lavado para palets higiénicos, box palets y bidones con sistemas CIP.",
+    "hero": {
+      "title": "Logística: Pallets y Bidones",
+      "subtitle": "Recuperación y limpieza de grandes contenedores.",
+      "description": "Sistemas automatizados para grandes volúmenes. Lavado de Pallets higiénicos H1, Box Palets y limpieza interior/exterior de bidones mediante nuestros sistemas exclusivos de inyección rotativa.",
+      "bgImage": "/images/sectors/bg-logistic.jpg",
+      "featuredImage": "https://jeros.com/media/bin-barrel.png"
+    }
+  },
+  {
+    "slug": "carnica-pesquera",
+    "name": "Cárnica, Pesquera y Hortícola",
+    "metaDescription": "Lavautensilios para mataderos, salas de despiece e industria pesquera. Desinfección de cajas E2.",
+    "hero": {
+      "title": "Cárnica y Alimentaria",
+      "subtitle": "Desinfección crítica para seguridad alimentaria.",
+      "description": "La sangre, las grasas animales y los restos orgánicos requieren una acción mecánica potente. Nuestras máquinas aseguran la desinfección térmica de cuchillos, cajas E2, ganchos y bandejas de corte.",
+      "bgImage": "/images/sectors/bg-meat.jpg",
+      "featuredImage": "https://jeros.com/media/lsinfpxf/9120_baker.png?rmode=max&width=480&height=570"
+    }
+  },
+  {
+    "slug": "snacks-golosinas",
+    "name": "Snacks y Golosinas",
+    "metaDescription": "Limpieza de multicabezales y pesadoras asociativas para snacks. Sistema JEROS ACE.",
+    "hero": {
+      "title": "Snacks y Confitería",
+      "subtitle": "Cuidado delicado para pesadoras y multicabezales.",
+      "description": "Especialistas en la limpieza de las partes desmontables de pesadoras asociativas (multicabezales). El sistema ACE evita golpes y roturas en las tolvas y canales vibratorios, eliminando restos de azúcar y condimentos pegajosos.",
+      "bgImage": "/images/sectors/bg-snacks.jpg",
+      "featuredImage": "https://jeros.com/media/ace-system.png"
+    }
+  },
+  {
+    "slug": "fast-food",
+    "name": "Fast Food",
+    "metaDescription": "Soluciones de lavado compactas para cadenas de restauración rápida y QSR.",
+    "hero": {
+      "title": "Fast Food & QSR",
+      "subtitle": "Rapidez y eficiencia en espacios reducidos.",
+      "description": "Máquinas compactas de alto rendimiento diseñadas para el ritmo frenético de la cocina operativa. Limpieza de bandejas de servicio, cestas de freidora y utensilios de preparación en ciclos de 3 minutos.",
+      "bgImage": "/images/sectors/bg-fastfood.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    }
+  },
+  {
+    "slug": "pasteleria-panaderia",
+    "name": "Pastelería y Panadería",
+    "metaDescription": "Lavaperoles y lava-latas para obradores. Elimina restos de masa, chocolate y cremas quemadas.",
+    "hero": {
+      "title": "Pastelería y Panadería",
+      "subtitle": "El estándar mundial en limpieza de obradores.",
+      "description": "JEROS nació en una panadería. Nadie limpia mejor las latas con restos quemados, los peroles con masa incrustada, las mangas pasteleras y los batidores. Ahorre horas de fregado manual.",
+      "bgImage": "/images/sectors/bg-bakery.jpg",
+      "featuredImage": "https://jeros.com/media/lsinfpxf/9120_baker.png?rmode=max&width=480&height=570"
+    }
+  },
+  {
+    "slug": "catering-colectividades",
+    "name": "Cátering y Cocina colectiva",
+    "metaDescription": "Túneles de lavado y lavautensilios para hospitales, colegios y cocinas centrales.",
+    "hero": {
+      "title": "Cátering y Colectividades",
+      "subtitle": "Alta capacidad para grandes volúmenes de comensales.",
+      "description": "Desde túneles de lavado de vajilla y bandejas hasta sistemas para limpiar las grandes ollas y contenedores Gastronorm (GN) de las cocinas centrales. Higiene certificada para hospitales y escuelas.",
+      "bgImage": "/images/sectors/bg-catering.jpg",
+      "featuredImage": "https://jeros.com/media/jeros-200xl.png"
+    }
+  }
+]

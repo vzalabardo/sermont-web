@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "pharma-cosmetica",
+    "name": "Pharma y Cosmética",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4.5 12.5l8-8a3.5 3.5 0 115 5l-8 8a3.5 3.5 0 11-5-5zM9 8l7 7'></path>",
+    "metaDescription": "Soluciones de lavado industrial para la industria farmacéutica y cosmética. Cumplimiento GMP y validación de limpieza.",
+    "hero": {
+      "title": "Pharma y Cosmética",
+      "subtitle": "Máquinas para confiar en la tecnología de lavado.",
+      "description": "Línea completa de sistemas de lavado diseñados bajo normativas GMP. Soluciones para componentes de llenado, reactores, moldes y utensilios de laboratorio que garantizan la eliminación total de residuos y contaminación cruzada.",
+      "bgImage": "/images/sectors/bg-pharma.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Pharma?",
+    "contactText": "Nuestro equipo técnico en Barcelona especializado en normativa farmacéutica le ayudará a elegir el sistema que mejor se adapte a sus protocolos."
+  },
+  {
+    "slug": "industria-lactea",
+    "name": "Industria Láctea y Quesos",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M3 6l3 12h12l3-12H3zM9 6V3h6v3M9 10v4M15 10v4'></path>",
+    "metaDescription": "Lavadoras industriales para moldes de queso, bandejas y bloque-moldes. Higiene total para productos lácteos.",
+    "hero": {
+      "title": "Industria Láctea y Quesos",
+      "subtitle": "Higiene absoluta para procesos bacteriológicos sensibles.",
+      "description": "El lavado de moldes, multimoldes y bloque-moldes requiere una precisión absoluta para evitar contaminaciones. Nuestros sistemas garantizan la eliminación de grasas y proteínas lácteas con programas térmicos específicos.",
+      "bgImage": "/images/sectors/bg-dairy.jpg",
+      "featuredImage": "https://jeros.com/media/tzlhuq0q/9115_mix.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Láctea?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema que mejor se adapte a sus procesos lácteos."
+  },
+  {
+    "slug": "metalurgica-auto",
+    "name": "Metalúrgica y Auto",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'></path>",
+    "metaDescription": "Lavado de piezas mecanizadas, desengrase industrial y limpieza de KLTs para automoción.",
+    "hero": {
+      "title": "Metalúrgica y Automoción",
+      "subtitle": "Potencia de desengrase para la industria pesada.",
+      "description": "Eliminación eficaz de aceites de corte, virutas y grasas industriales. Desde el lavado de cajas KLT logísticas hasta el desengrase de piezas mecanizadas de alta precisión listas para montaje.",
+      "bgImage": "/images/sectors/bg-metal.jpg",
+      "featuredImage": "https://jeros.com/media/dbkjl04s/9117_mix.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Metalúrgica?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema de desengrase que mejor se adapte a sus procesos."
+  },
+  {
+    "slug": "pallets-bidones",
+    "name": "Pallets y Bidones",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4'></path>",
+    "metaDescription": "Sistemas de lavado para palets higiénicos, box palets y bidones con sistemas CIP.",
+    "hero": {
+      "title": "Logística: Pallets y Bidones",
+      "subtitle": "Recuperación y limpieza de grandes contenedores.",
+      "description": "Sistemas automatizados para grandes volúmenes. Lavado de Pallets higiénicos H1, Box Palets y limpieza interior/exterior de bidones mediante nuestros sistemas exclusivos de inyección rotativa.",
+      "bgImage": "/images/sectors/bg-logistic.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Logística?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema que mejor se adapte a su logística."
+  },
+  {
+    "slug": "carnica-pesquera",
+    "name": "Cárnica, Pesquera y Hortícola",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 2a10 10 0 00-10 10 10 10 0 0010 10c2.5 0 4.8-1 6.5-2.6l3-3.4c.5-.5.5-1.3 0-1.8L12 2zM9 15a2 2 0 110-4 2 2 0 010 4z'/>",
+    "metaDescription": "Lavautensilios para mataderos, salas de despiece e industria pesquera. Desinfección de cajas E2.",
+    "hero": {
+      "title": "Cárnica y Alimentaria",
+      "subtitle": "Desinfección crítica para seguridad alimentaria.",
+      "description": "La sangre, las grasas animales y los restos orgánicos requieren una acción mecánica potente. Nuestras máquinas aseguran la desinfección térmica de cuchillos, cajas E2, ganchos y bandejas de corte.",
+      "bgImage": "/images/sectors/bg-meat.jpg",
+      "featuredImage": "https://jeros.com/media/lsinfpxf/9120_baker.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Cárnica?",
+    "contactText": "Nuestro equipo técnico especializado en seguridad alimentaria le ayudará a elegir el sistema adecuado."
+  },
+  {
+    "slug": "snacks-golosinas",
+    "name": "Snacks y Golosinas",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'></path>",
+    "metaDescription": "Limpieza de multicabezales y pesadoras asociativas para snacks. Sistema JEROS ACE.",
+    "hero": {
+      "title": "Snacks y Confitería",
+      "subtitle": "Cuidado delicado para pesadoras y multicabezales.",
+      "description": "Especialistas en la limpieza de las partes desmontables de pesadoras asociativas (multicabezales). El sistema ACE evita golpes y roturas en las tolvas y canales vibratorios, eliminando restos de azúcar y condimentos pegajosos.",
+      "bgImage": "/images/sectors/bg-snacks.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Snacks?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema adecuado para sus pesadoras y multicabezales."
+  },
+  {
+    "slug": "fast-food",
+    "name": "Fast Food y Cátering",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M4 11h16M2 17c0 1.1.9 2 2 2h16a2 2 0 002-2M2 17l1.5-6h17l1.5 6M7 7a5 5 0 0110 0'></path>",
+    "metaDescription": "Soluciones de lavado compactas para cadenas de restauración rápida y QSR.",
+    "hero": {
+      "title": "Fast Food & QSR",
+      "subtitle": "Rapidez y eficiencia en espacios reducidos.",
+      "description": "Máquinas compactas de alto rendimiento diseñadas para el ritmo frenético de la cocina operativa. Limpieza de bandejas de servicio, cestas de freidora y utensilios de preparación en ciclos de 3 minutos.",
+      "bgImage": "/images/sectors/bg-fastfood.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Fast Food?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema compacto ideal para su cocina."
+  },
+  {
+    "slug": "pasteleria-panaderia",
+    "name": "Pastelería y Panadería",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M17 18h2a2 2 0 002-2c0-5-4-9-9-9s-9 4-9 9a2 2 0 002 2h2M9 18v3m6-3v3M12 18v3'></path>",
+    "metaDescription": "Lavaperoles y lava-latas para obradores. Elimina restos de masa, chocolate y cremas quemadas.",
+    "hero": {
+      "title": "Pastelería y Panadería",
+      "subtitle": "El estándar mundial en limpieza de obradores.",
+      "description": "JEROS nació en una panadería. Nadie limpia mejor las latas con restos quemados, los peroles con masa incrustada, las mangas pasteleras y los batidores. Ahorre horas de fregado manual.",
+      "bgImage": "/images/sectors/bg-bakery.jpg",
+      "featuredImage": "https://jeros.com/media/lsinfpxf/9120_baker.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Panadería?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema ideal para su obrador."
+  },
+  {
+    "slug": "catering-colectividades",
+    "name": "Cátering y Cocina Colectiva",
+    "icon": "<path stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'></path>",
+    "metaDescription": "Túneles de lavado y lavautensilios para hospitales, colegios y cocinas centrales.",
+    "hero": {
+      "title": "Cátering y Colectividades",
+      "subtitle": "Alta capacidad para grandes volúmenes de comensales.",
+      "description": "Desde túneles de lavado de vajilla y bandejas hasta sistemas para limpiar las grandes ollas y contenedores Gastronorm (GN) de las cocinas centrales. Higiene certificada para hospitales y escuelas.",
+      "bgImage": "/images/sectors/bg-catering.jpg",
+      "featuredImage": "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+    },
+    "contactHeading": "¿Necesitas asesoría en Cátering?",
+    "contactText": "Nuestro equipo técnico le ayudará a elegir el sistema ideal para su cocina central."
+  }
+]

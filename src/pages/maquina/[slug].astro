@@ -1,0 +1,409 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import MachineCard from '../../components/MachineCard.astro';
+import sectors from '../../data/sectors.json';
+import maquinas from '../../data/maquinas.json';
+
+export function getStaticPaths() {
+    return maquinas.map((maquina) => ({
+        params: { slug: maquina.slug },
+        props: { maquina }
+    }));
+}
+
+const { maquina } = Astro.props;
+
+const machineSectors = sectors.filter((s) => maquina.sectors.includes(s.slug));
+const firstSector = machineSectors[0];
+
+const relatedMachines = maquinas
+    .filter((m) => m.slug !== maquina.slug && m.sectors.some((s) => maquina.sectors.includes(s)))
+    .slice(0, 4);
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": maquina.title,
+    "description": maquina.description,
+    "image": maquina.gallery,
+    "brand": {
+        "@type": "Brand",
+        "name": "JEROS"
+    },
+    "manufacturer": {
+        "@type": "Organization",
+        "name": "JEROS A/S"
+    },
+    "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+            "@type": "Organization",
+            "name": "Sermont Maquinaria"
+        }
+    }
+};
+
+const breadcrumbs = [
+    { label: "Inicio", href: "/" },
+    { label: "Maquinaria", href: "/#industrias" },
+    ...(firstSector ? [{ label: firstSector.name, href: `/sector/${firstSector.slug}` }] : []),
+    { label: maquina.title }
+];
+---
+
+<BaseLayout
+    title={`${maquina.title} | Sermont - Soluciones de Lavado Industrial`}
+    description={maquina.description}
+    ogImage={maquina.gallery[0]}
+    activePage="maquina"
+    jsonLd={jsonLd}
+    bodyClass="font-[Lato]"
+>
+
+    <!-- BREADCRUMBS -->
+    <div class="pt-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 pt-4">
+            <Breadcrumbs items={breadcrumbs} />
+        </div>
+    </div>
+
+    <!-- HERO DEL PRODUCTO -->
+    <section class="py-32 text-white bg-cover bg-center" style="background: linear-gradient(rgba(10, 25, 47, 0.70), rgba(10, 25, 47, 0.70)), url('/images/fondo.jpeg'); background-size: cover; background-position: center;">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-sm font-bold uppercase tracking-widest mb-4 text-red-400">{maquina.category}</p>
+            <h1 class="text-5xl md:text-6xl font-black leading-tight uppercase italic tracking-tighter">
+                {maquina.title.split(' ').slice(0, 1)}<br>{maquina.title.split(' ').slice(1).join(' ')}
+            </h1>
+        </div>
+    </section>
+
+    <!-- DESCRIPCIÓN DEL PRODUCTO Y GALERÍA -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+            <!-- Columna Izquierda: Descripción -->
+            <div class="flex flex-col justify-center">
+                <h2 class="text-3xl font-black uppercase tracking-tighter mb-6 text-[#0a192f]">
+                    {maquina.subtitle}
+                </h2>
+                
+                <p class="text-gray-600 leading-relaxed text-lg mb-8">
+                    {maquina.description}
+                </p>
+
+                <!-- Cards de características -->
+                <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                    
+                    <!-- Card 1: Dimensiones (full width) -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#0033A0]/30 transition-all group col-span-2">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 text-[#0033A0] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+                            </div>
+                            <div class="w-full">
+                                <h4 class="font-bold text-[#0a192f] text-xs uppercase tracking-widest mb-2">Capacidad</h4>
+                                <div class="block text-xl font-black text-[#0033A0] mb-2 tracking-tight">
+                                    {maquina.specs.dimensions} <span class="text-lg align-top">cm</span>
+                                </div>
+                                <p class="text-sm text-gray-500 leading-relaxed">
+                                    Medidas máximas (ancho x fondo x alto) para limpiar todo tipo de utensilios.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Ciclos -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#0033A0]/30 transition-all group">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 text-[#0033A0] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div class="w-full">
+                                <h4 class="font-bold text-[#0a192f] text-xs uppercase tracking-widest mb-2">Ciclos Rápidos</h4>
+                                <div class="block text-xl font-black text-[#0033A0] mb-2 tracking-tight">
+                                    {maquina.specs.cycles}
+                                </div>
+                                <p class="text-sm text-gray-500 leading-relaxed">
+                                    Lavados totalmente configurables según necesidad.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Consumo -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#0033A0]/30 transition-all group">
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-full bg-blue-50 text-[#0033A0] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                            </div>
+                            <div class="w-full">
+                                <h4 class="font-bold text-[#0a192f] text-xs uppercase tracking-widest mb-2">Alta Eficiencia</h4>
+                                <div class="block text-xl font-black text-[#0033A0] mb-2 tracking-tight">
+                                    {maquina.specs.consumption} <span class="text-lg align-top">/ lavado</span>
+                                </div>
+                                <p class="text-sm text-gray-500 leading-relaxed">
+                                    Consumo reducido gracias a la eficiencia del sistema JEROS.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 border-t border-gray-100 pt-6">
+                    <a href="#" class="inline-flex items-center gap-2 text-red-600 font-bold uppercase tracking-widest text-xs hover:underline transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Descargar folleto (PDF)
+                    </a>
+                    <a href="#video-section" class="inline-flex items-center gap-2 text-[#0033A0] font-bold uppercase tracking-widest text-xs hover:underline transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Ver film
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: Galería -->
+            <div class="relative">
+                <div class="bg-gray-50 p-8 border border-gray-200 shadow-sm rounded-lg overflow-hidden" id="carousel-container">
+                    <div class="flex transition-transform duration-500 ease-in-out" id="product-carousel">
+                        {maquina.gallery.map((img, i) => (
+                            <div class="min-w-full flex justify-center items-center p-4 cursor-zoom-in carousel-slide">
+                                <img 
+                                    src={img} 
+                                    alt={`${maquina.title} Vista ${i + 1}`} 
+                                    class="max-h-[500px] object-contain"
+                                    loading={i === 0 ? "eager" : "lazy"}
+                                    width="480"
+                                    height="570"
+                                >
+                            </div>
+                        ))}
+                    </div>
+                    
+                    {maquina.gallery.length > 1 && (
+                        <>
+                            <button class="absolute left-5 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full transition" id="prevBtn" aria-label="Imagen anterior">
+                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                            </button>
+                            <button class="absolute right-5 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full transition" id="nextBtn" aria-label="Imagen siguiente">
+                                <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2" id="carousel-indicators">
+                                {maquina.gallery.map((_, i) => (
+                                    <button 
+                                        class={`w-3 h-3 rounded-full transition ${i === 0 ? 'bg-[#d10a3c]' : 'bg-white/50'}`}
+                                        data-index={i}
+                                        aria-label={`Ir a imagen ${i + 1}`}
+                                    ></button>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                </div>
+                <p class="text-center text-xs text-gray-400 mt-4 italic">Haga clic en la imagen para ampliar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN ERGONOMÍA -->
+    <section class="py-8 bg-slate-50 border-t border-gray-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative order-last md:order-first">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-[#0033A0] opacity-5 rounded-full z-0"></div>
+                    <img 
+                        src={maquina.ergonomicsImage}
+                        alt={`Ergonomía ${maquina.title}`}
+                        class="relative z-10 w-full max-w-md mx-auto rounded-xl shadow-xl bg-white object-cover hover:scale-[1.02] transition-transform duration-500"
+                        loading="lazy"
+                    >
+                </div>
+                
+                <div>
+                    <h2 class="text-3xl font-black text-[#0a192f] mb-8 leading-tight uppercase italic">
+                        Ergonomía <br><span class="text-red-600">Comodidad en el día a día</span>
+                    </h2>
+                    
+                    <div class="text-gray-600 space-y-4 leading-relaxed text-base">
+                        {maquina.features.ergonomicsText.map((text, i) => {
+                            if (i === 2) {
+                                return <p class="border-l-4 border-red-100 pl-4 py-1 italic text-gray-700">{text}</p>;
+                            }
+                            return <p>{text}</p>;
+                        })}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN MANTENIMIENTO Y TECNOLOGÍA -->
+    <section class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-3xl font-black text-[#0a192f] mb-8 leading-tight uppercase italic">
+                        Mantenimiento Simplificado <br><span class="text-red-600">Nada de que preocuparse</span>
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        {maquina.features.maintenancePoints.map((point, i) => (
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-50 text-[#0033A0] flex items-center justify-center font-bold">{i + 1}</div>
+                                <p class="text-gray-600 leading-relaxed text-sm">
+                                    <strong class="block text-gray-900 mb-1">{point.title}</strong>
+                                    {point.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-gray-200 rounded-full z-0 opacity-50"></div>
+                    <img 
+                        src={maquina.maintenanceImage}
+                        alt={`Filtros y Boquillas ${maquina.title}`}
+                        class="relative z-10 w-full max-w-md mx-auto rounded-xl shadow-2xl object-cover border-4 border-white"
+                        loading="lazy"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE VÍDEO -->
+    <section id="video-section" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h3 class="text-2xl font-black uppercase tracking-tighter mb-8">Vea el {maquina.title} en acción</h3>
+            <div class="bg-gray-200 rounded-lg overflow-hidden shadow-xl group cursor-pointer relative">
+                <div class="w-full h-[400px] flex items-center justify-center bg-[#0a192f] text-white transition-colors group-hover:bg-[#0033A0]">
+                    <div class="text-center">
+                        <svg class="w-20 h-20 text-white mx-auto mb-4 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+                        <p class="text-xl font-bold uppercase tracking-widest">[ Ver Vídeo Demostrativo ]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OTRAS MÁQUINAS RELACIONADAS -->
+    {relatedMachines.length > 0 && (
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-black uppercase tracking-tighter mb-4">Otras máquinas que te pueden interesar</h2>
+                    <div class="w-20 h-1 bg-[#d10a3c] mx-auto"></div>
+                </div>
+                
+                <div class="relative">
+                    <div class="flex py-8 overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scroll-smooth" id="related-products-carousel" style="-ms-overflow-style: none; scrollbar-width: none;">
+                        {relatedMachines.map((machine) => (
+                            <div class="min-w-[300px] md:min-w-[350px] snap-center">
+                                <article class="bg-white p-8 text-center flex flex-col items-center h-full rounded border border-gray-200 hover:border-[#d10a3c] hover:shadow-lg hover:-translate-y-1 transition-all">
+                                    <img 
+                                        src={machine.gallery[0]} 
+                                        alt={machine.title} 
+                                        class="h-48 object-contain mb-6"
+                                        loading="lazy"
+                                        width="480"
+                                        height="570"
+                                    >
+                                    <h4 class="text-xl font-black text-[#0a192f] uppercase tracking-tighter mb-2">{machine.title}</h4>
+                                    <p class="text-xs text-gray-400 font-bold uppercase tracking-widest mb-6 italic">{machine.subtitle}</p>
+                                    <a href={`/maquina/${machine.slug}`} class="text-[#d10a3c] font-black text-xs uppercase tracking-widest hover:underline flex items-center gap-2 mt-auto">
+                                        Ver detalles <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                                    </a>
+                                </article>
+                            </div>
+                        ))}
+                    </div>
+                    <div class="hidden md:flex justify-end gap-4 mt-4 pr-6">
+                        <button id="rel-prev" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition" aria-label="Anterior">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        </button>
+                        <button id="rel-next" class="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition" aria-label="Siguiente">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )}
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <ContactSection />
+
+    <!-- Modal para ampliar imágenes -->
+    <div id="imageModal" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/90" role="dialog" aria-modal="true">
+        <button class="absolute top-8 right-8 text-white text-3xl cursor-pointer" id="closeModal" aria-label="Cerrar">&times;</button>
+        <img class="max-w-[90%] max-h-[90%]" id="modalImage" alt="Imagen ampliada">
+    </div>
+
+</BaseLayout>
+
+<script>
+    // Carousel
+    const track = document.getElementById('product-carousel');
+    const slides = track ? Array.from(track.children) : [];
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const indicators = document.querySelectorAll('#carousel-indicators button');
+    let currentIndex = 0;
+
+    function goToSlide(index: number) {
+        if (!slides.length) return;
+        currentIndex = index;
+        const slideWidth = (slides[0] as HTMLElement).getBoundingClientRect().width;
+        (track as HTMLElement).style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('bg-[#d10a3c]', i === currentIndex);
+            ind.classList.toggle('bg-white/50', i !== currentIndex);
+        });
+    }
+
+    nextBtn?.addEventListener('click', () => { goToSlide((currentIndex + 1) % slides.length); });
+    prevBtn?.addEventListener('click', () => { goToSlide((currentIndex - 1 + slides.length) % slides.length); });
+    indicators.forEach((ind) => {
+        ind.addEventListener('click', () => { goToSlide(Number(ind.getAttribute('data-index'))); });
+    });
+    window.addEventListener('resize', () => goToSlide(currentIndex));
+
+    // Image Modal
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage') as HTMLImageElement;
+    const closeModalBtn = document.getElementById('closeModal');
+
+    document.querySelectorAll('.carousel-slide img').forEach((img) => {
+        img.addEventListener('click', () => {
+            if (modal && modalImg) {
+                modal.style.display = 'flex';
+                modalImg.src = (img as HTMLImageElement).src;
+            }
+        });
+    });
+
+    function closeModal() {
+        if (modal) modal.style.display = 'none';
+    }
+    closeModalBtn?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // Related Products Carousel
+    const relCarousel = document.getElementById('related-products-carousel');
+    const relPrev = document.getElementById('rel-prev');
+    const relNext = document.getElementById('rel-next');
+
+    relNext?.addEventListener('click', () => {
+        relCarousel?.scrollBy({ left: relCarousel.offsetWidth / 2, behavior: 'smooth' });
+    });
+    relPrev?.addEventListener('click', () => {
+        relCarousel?.scrollBy({ left: -relCarousel.offsetWidth / 2, behavior: 'smooth' });
+    });
+</script>
+
+<style>
+    #related-products-carousel::-webkit-scrollbar { display: none; }
+</style>

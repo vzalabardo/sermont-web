@@ -1,0 +1,28 @@
+---
+import sectors from '../data/sectors.json';
+
+interface Props {
+  activeSlug?: string;
+}
+
+const { activeSlug } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-6 border-b border-gray-100 pb-4 overflow-x-auto whitespace-nowrap">
+    {sectors.map((sector) => (
+        <a 
+            href={`/sector/${sector.slug}`} 
+            class:list={[
+                "mini-sector-link flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter transition-all",
+                sector.slug === activeSlug 
+                    ? "text-[#d10a3c] opacity-100" 
+                    : "text-gray-400 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:text-[#d10a3c]"
+            ]}
+        >
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <Fragment set:html={sector.icon} />
+            </svg>
+            {sector.name}
+        </a>
+    ))}
+</div>

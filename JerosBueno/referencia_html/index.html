@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermont | Soluciones de Lavado Industrial - Nerkon & Jeros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .hero-gradient {
+            background: linear-gradient(rgba(10, 25, 47, 0.70), rgba(10, 25, 47, 0.70)), 
+                        url('fondo.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .sector-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Hover Rojo */
+        .sector-card:hover {
+            background: #d10a3c;
+            transform: translateY(-5px);
+            border-radius: 0.75rem; /* Se redondea al hacer hover para resaltar */
+            z-index: 10;
+        }
+        /* Icono Azul de base, Blanco en hover */
+        .sector-card svg {
+            color: #60a5fa; 
+            transition: color 0.3s ease;
+        }
+        .sector-card:hover svg {
+            color: #ffffff;
+        }
+
+        .brand-link {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .brand-link:hover {
+            border-bottom: 2px solid #d10a3c;
+            color: #d10a3c;
+        }
+        .input-field {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            background: white;
+            border-color: #d10a3c;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(209, 10, 60, 0.1);
+        }
+        .client-logo {
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* Botón flotante a la derecha desplegando a la izquierda */
+        .contact-menu:hover .contact-options {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BOTÓN FLOTANTE DE CONTACTO (INFERIOR DERECHA) -->
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-row-reverse items-center contact-menu group">
+        <!-- Icono Principal (Trigger) -->
+        <div class="w-16 h-16 bg-[#5cb85c] rounded-full flex items-center justify-center text-white shadow-2xl cursor-pointer z-10 transition-transform group-hover:scale-110">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+            </svg>
+        </div>
+        
+        <!-- Opciones Desplegables (Hacia la izquierda) -->
+        <div class="contact-options flex flex-row-reverse gap-3 mr-4 opacity-0 translate-x-10 transition-all duration-300 pointer-events-none bg-green-100/40 backdrop-blur-md p-2 pl-4 rounded-full border border-green-200">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/34934231510" target="_blank" class="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" title="WhatsApp">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+            </a>
+            <!-- Phone -->
+            <a href="tel:+34934231510" class="w-12 h-12 bg-[#f0ad4e] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" title="Llamar">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+            </a>
+            <!-- Email -->
+            <a href="mailto:info@sermont.es" class="w-12 h-12 bg-[#337ab7] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" title="Email">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- NAV BAR (FONDO BLANCO) -->
+    <nav class="fixed w-full z-50 bg-white text-[#0a192f] py-4 px-6 border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-10">
+                <div class="text-2xl font-bold tracking-tighter uppercase border-r border-gray-300 pr-8">SERMONT</div>
+                <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#0a192f]">
+                    <a href="#maquinaria" class="hover:text-red-600 transition">Maquinaria</a>
+                    <a href="#industrias" class="hover:text-red-600 transition">Industrias</a>
+                    <a href="#nosotros" class="hover:text-red-600 transition">Sobre Nosotros</a>
+                    <a href="#contacto" class="hover:text-red-600 transition">Contacto</a>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6">
+                <div class="flex gap-4 border-r border-gray-200 pr-6">
+                    <a href="#nerkon" class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c]">NERKON</a>
+                    <a href="#jeros" class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c]">JEROS</a>
+                    <a href="#sermont" class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c]">SERMONT</a>
+                </div>
+                <a href="#contacto" class="bg-[#d10a3c] hover:bg-red-700 text-white px-5 py-2 rounded text-[11px] font-bold transition shadow-lg">PRESUPUESTO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient min-h-screen flex flex-col justify-center items-center text-center text-white px-4 pt-24">
+        <h2 class="font-bold tracking-[0.4em] uppercase mb-4 text-sm" style="color: #d10a3c;">Ingeniería en Sistemas de Lavado</h2>
+        <h1 class="text-5xl md:text-7xl font-bold max-w-5xl mb-8 leading-tight">Excelencia técnica en limpieza industrial.</h1>
+        <p class="text-xl text-gray-300 max-w-2xl mb-12 font-light">Suministramos, instalamos y mantenemos la maquinaria de lavado más avanzada para la industria 4.0.</p>
+        
+        <!-- SECTOR GRID (9 ELEMENTOS CON ESQUINAS REDONDEADAS ESPECÍFICAS) -->
+        <div class="flex flex-wrap justify-center w-full max-w-7xl mb-10 overflow-visible">
+            
+            <!-- FILA 1 (5 ELEMENTOS) -->
+            <div class="flex w-full justify-center">
+                <!-- 1. Alimentaria (Redondeado Superior Izquierda) -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-b border-white/10 rounded-tl-3xl">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 12h12l3-12H3zM9 6V3h6v3M9 10v4M15 10v4"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Industria Alimentária</span>
+                </a>
+                <!-- 2. Pharma -->
+                <a href="pharma.html" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-b border-white/10">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 12.5l8-8a3.5 3.5 0 115 5l-8 8a3.5 3.5 0 11-5-5zM9 8l7 7"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Pharma y Cosmética</span>
+                </a>
+                <!-- 3. Metal -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-b border-white/10">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Metalúrgia y Auto</span>
+                </a>
+                <!-- 4. Palets -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-b border-white/10">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Palets y Bidones</span>
+                </a>
+                <!-- 5. Cárnica + Pesquera + Hortícola (Redondeado Superior Derecha) -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-b border-white/10 rounded-tr-3xl">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2a10 10 0 00-10 10 10 10 0 0010 10c2.5 0 4.8-1 6.5-2.6l3-3.4c.5-.5.5-1.3 0-1.8L12 2zM9 15a2 2 0 110-4 2 2 0 010 4z"/></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Cárnica, Pesquera y Hortícola</span>
+                </a>
+            </div>
+
+            <!-- FILA 2 (4 ELEMENTOS CENTRADOS) -->
+            <div class="flex w-full justify-center">
+                <!-- 6. Snacks (Redondeado Inferior Izquierda) -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-white/10 rounded-bl-3xl">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Snacks y Golosinas</span>
+                </a>
+                <!-- 7. Fast Food -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-white/10">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 11h16M2 17c0 1.1.9 2 2 2h16a2 2 0 002-2M2 17l1.5-6h17l1.5 6M7 7a5 5 0 0110 0"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Fast Food y Cátering</span>
+                </a>
+                <!-- 8. Panadería -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center border-r border-white/10">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 18h2a2 2 0 002-2c0-5-4-9-9-9s-9 4-9 9a2 2 0 002 2h2M9 18v3m6-3v3M12 18v3"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Pastelería y Panadería</span>
+                </a>
+                <!-- 9. Etiquetas (Redondeado Inferior Derecha) -->
+                <a href="#industrias" class="sector-card w-1/5 p-10 flex flex-col items-center rounded-br-3xl">
+                    <svg class="w-14 h-14 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path></svg>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-center leading-tight">Lavado de Etiquetas</span>
+                </a>
+            </div>
+        </div>
+
+        <a href="#maquinaria" class="bg-white text-[#0a192f] hover:bg-[#d10a3c] hover:text-white px-8 py-4 rounded-full font-bold transition shadow-xl uppercase text-sm tracking-wider">
+            Ver todas las máquinas
+        </a>
+    </section>
+
+    <!-- SOBRE SERMONT -->
+    <section id="nosotros" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <img src="https://www.nerkon.com/file.php?nid=21761&oid=12660174" alt="Maquinaria Sermont" class="relative rounded-2xl shadow-2xl z-10 border-l-8 border-[#d10a3c]">
+                <div class="absolute -bottom-8 -right-8 bg-[#0a192f] text-white p-8 rounded-xl shadow-xl z-20">
+                    <p class="text-4xl font-bold mb-1">SERMONT</p>
+                    <p class="text-[10px] font-bold text-red-400 uppercase tracking-widest">Engineering Industrial Solutions</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-[#d10a3c] font-bold uppercase tracking-[0.3em] text-xs mb-4">Sobre Nosotros</h3>
+                <h2 class="text-4xl font-bold text-[#0a192f] mb-8 leading-tight">Su partner de confianza en España y Portugal.</h2>
+                <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                    En <strong>Sermont</strong>, nos especializamos en la integración de líneas completas de lavado. No solo suministramos equipos, diseñamos procesos eficientes que ahorran agua, energía y tiempo, garantizando la máxima higiene en sectores críticos.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-10">
+                    <a href="nerkon.html" class="px-6 py-3 border border-gray-300 rounded text-xs font-bold text-[#0a192f] hover:bg-gray-50 transition uppercase tracking-widest">Ver NERKON</a>
+                    <a href="jeros.html" class="px-6 py-3 border border-gray-300 rounded text-xs font-bold text-[#0a192f] hover:bg-gray-50 transition uppercase tracking-widest">Ver JEROS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN VALORES -->
+    <section class="py-24 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all border-b-4 border-transparent hover:border-[#d10a3c]">
+                    <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-6 mx-auto text-[#0a192f]">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-[#0a192f] text-center">Asesoría Especializada</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6 text-center">Acompañamiento técnico y comercial bajo los estándares de nuestras marcas representadas.</p>
+                    <div class="text-center pt-4 border-t border-slate-100">
+                        <span class="text-sm font-bold text-slate-400 block mb-1 uppercase tracking-widest">Contacto SAT</span>
+                        <p class="text-lg font-bold text-[#d10a3c]">93 423 15 10</p>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all border-b-4 border-transparent hover:border-[#d10a3c]">
+                    <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-6 mx-auto text-[#0a192f]">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-[#0a192f] text-center">Calidad Garantizada</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed text-center">Equipos robustos de acero inoxidable diseñados para la máxima fiabilidad operativa y longevidad.</p>
+                </div>
+                <div class="bg-white p-10 rounded-xl shadow-sm hover:shadow-xl transition-all border-b-4 border-transparent hover:border-[#d10a3c]">
+                    <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-6 mx-auto text-[#0a192f]">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-[#0a192f] text-center">Rentabilidad Máxima</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed text-center">Optimización de consumos de agua y químicos para asegurar el mejor retorno de inversión (ROI).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CLIENTES (LOGOS NIKE Y COCA-COLA) -->
+    <section class="py-24 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h3 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-16 italic">Empresas que confían en nuestra tecnología</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg" alt="Coca Cola" class="client-logo h-6 mx-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="client-logo h-8 mx-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg" alt="Coca Cola" class="client-logo h-6 mx-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="client-logo h-8 mx-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg" alt="Coca Cola" class="client-logo h-6 mx-auto">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" class="client-logo h-8 mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="py-24 bg-[#0a192f] text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-red-600/5 skew-x-12 translate-x-20"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <div>
+                    <h3 class="text-red-400 font-bold uppercase tracking-widest text-xs mb-4">Contacto Directo</h3>
+                    <h2 class="text-5xl font-bold mb-8 leading-tight">Lleve su planta al siguiente nivel.</h2>
+                    <p class="text-gray-400 text-lg mb-12">Consúltenos sin compromiso sobre su proyecto de lavado. Ofrecemos estudios de eficiencia y ROI personalizados.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center text-red-400 font-bold italic">@</div>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-gray-500 font-bold">Email</p>
+                                <p class="text-xl">info@sermont.es</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-10 text-slate-900 shadow-2xl">
+                    <form class="space-y-5">
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <input type="text" class="input-field w-full p-4 rounded text-sm" placeholder="Nombre">
+                            <input type="text" class="input-field w-full p-4 rounded text-sm" placeholder="Empresa">
+                        </div>
+                        <input type="email" class="input-field w-full p-4 rounded text-sm" placeholder="Email corporativo">
+                        <textarea rows="4" class="input-field w-full p-4 rounded text-sm" placeholder="Su consulta..."></textarea>
+                        <button class="w-full bg-[#d10a3c] hover:bg-red-700 text-white font-bold py-4 rounded transition-all shadow-lg uppercase text-xs tracking-widest">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#050c16] text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-black italic mb-1 tracking-tighter uppercase">SERMONT</h2>
+                <p class="text-[9px] text-gray-500 uppercase tracking-[0.3em]">Higiene Industrial Avanzada</p>
+            </div>
+            
+            <div class="flex gap-10 text-gray-500 text-[10px] font-bold tracking-widest uppercase">
+                <a href="#" class="hover:text-red-400">Aviso Legal</a>
+                <a href="#" class="hover:text-red-400">Privacidad</a>
+            </div>
+
+            <div class="text-[9px] text-gray-600 uppercase tracking-widest">
+                © 2026 SERMONT MAQUINARIA - SPAIN & PORTUGAL
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
