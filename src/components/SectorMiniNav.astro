@@ -3,27 +3,75 @@ import sectors from '../data/sectors.json';
 
 interface Props {
   activeSlug?: string;
+  maxVisible?: number;
 }
 
-const { activeSlug } = Astro.props;
+const { activeSlug, maxVisible = 4 } = Astro.props;
 const base = import.meta.env.BASE_URL;
+
+const activeIndex = sectors.findIndex(s => s.slug === activeSlug);
+const visibleSectors = sectors.filter((s, i) => i < maxVisible || s.slug === activeSlug);
+const hiddenSectors = sectors.filter((s, i) => i >= maxVisible && s.slug !== activeSlug);
 ---
 
-<div class="flex flex-wrap gap-6 border-b border-gray-100 pb-4 overflow-x-auto whitespace-nowrap">
-    {sectors.map((sector) => (
-        <a 
-            href={`${base}sector/${sector.slug}`} 
-            class:list={[
-                "mini-sector-link flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter transition-all",
-                sector.slug === activeSlug 
-                    ? "text-[#d10a3c] opacity-100" 
-                    : "text-gray-400 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:text-[#d10a3c]"
-            ]}
-        >
-            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <Fragment set:html={sector.icon} />
-            </svg>
-            {sector.name}
-        </a>
-    ))}
+<div class="border-b border-gray-100 pb-4" id="sector-nav">
+    <div class="flex items-center gap-4 flex-wrap">
+        {visibleSectors.map((sector) => (
+            <a 
+                href={`${base}sector/${sector.slug}`} 
+                class:list={[
+                    "mini-sector-link flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter transition-all whitespace-nowrap",
+                    sector.slug === activeSlug 
+                        ? "text-[#d10a3c] opacity-100" 
+                        : "text-gray-400 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:text-[#d10a3c]"
+                ]}
+            >
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <Fragment set:html={sector.icon} />
+                </svg>
+                {sector.name}
+            </a>
+        ))}
+
+        {hiddenSectors.length > 0 && (
+            <button 
+                id="toggle-sectors" 
+                class="text-[10px] font-bold uppercase tracking-tighter text-gray-400 hover:text-[#d10a3c] transition-all flex items-center gap-1 whitespace-nowrap cursor-pointer"
+            >
+                +{hiddenSectors.length} más
+                <svg class="w-3 h-3 transition-transform" id="toggle-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+        )}
+
+        <div id="hidden-sectors" class="hidden flex-wrap gap-4 w-full pt-3 border-t border-gray-50 mt-1">
+            {hiddenSectors.map((sector) => (
+                <a 
+                    href={`${base}sector/${sector.slug}`} 
+                    class="mini-sector-link flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter transition-all whitespace-nowrap text-gray-400 opacity-60 grayscale hover:opacity-100 hover:grayscale-0 hover:text-[#d10a3c]"
+                >
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <Fragment set:html={sector.icon} />
+                    </svg>
+                    {sector.name}
+                </a>
+            ))}
+        </div>
+    </div>
 </div>
+
+<script>
+    const btn = document.getElementById('toggle-sectors');
+    const hidden = document.getElementById('hidden-sectors');
+    const icon = document.getElementById('toggle-icon');
+    let open = false;
+
+    btn?.addEventListener('click', () => {
+        open = !open;
+        hidden?.classList.toggle('hidden', !open);
+        hidden?.classList.toggle('flex', open);
+        icon?.classList.toggle('rotate-180', open);
+        if (btn) btn.innerHTML = open 
+            ? 'Menos <svg class="w-3 h-3 rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>'
+            : `+${hidden?.children.length || 0} más <svg class="w-3 h-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>`;
+    });
+</script>
