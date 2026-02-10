@@ -15,6 +15,7 @@ export function getStaticPaths() {
 }
 
 const { sector } = Astro.props;
+const base = import.meta.env.BASE_URL;
 
 const sectorMachines = maquinas.filter((m) => m.sectors.includes(sector.slug));
 
@@ -36,8 +37,8 @@ const jsonLd = {
 };
 
 const breadcrumbs = [
-    { label: "Inicio", href: "/" },
-    { label: "Maquinaria", href: "/#industrias" },
+    { label: "Inicio", href: base },
+    { label: "Maquinaria", href: `${base}#industrias` },
     { label: sector.name }
 ];
 ---
