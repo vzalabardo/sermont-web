@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://vzalabardo.github.io',  // GitHub Pages domain
-  base: '/sermont-web',                  // Nombre del repositorio
+  base: '/sermont-web/',                 // Nombre del repositorio (trailing slash importante)
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
