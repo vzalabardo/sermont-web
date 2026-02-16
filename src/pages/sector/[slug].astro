@@ -67,9 +67,11 @@ const breadcrumbs = [
                     {sector.hero.title}
                 </h1>
                 <h2 class="text-xl font-bold text-red-500 mb-4 uppercase tracking-widest">{sector.hero.subtitle}</h2>
-                <p class="text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-light">
-                    {sector.hero.description}
-                </p>
+                <div class="text-lg text-gray-200 mb-8 leading-relaxed max-w-2xl font-light space-y-4">
+                    {sector.hero.description.split('\n\n').map(paragraph => (
+                        <p>{paragraph}</p>
+                    ))}
+                </div>
                 <a href="#catalogo" class="inline-block border-2 border-white px-8 py-3 rounded text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-[#0a192f] transition">
                     Ver catálogo de máquinas
                 </a>
