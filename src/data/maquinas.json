@@ -98,7 +98,7 @@
     "subtitle": "El Lavautensilios industrial más compacto.",
     "category": "Lavautensilios",
     "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
+    "ergonomicsImage": "/images/ergonomia/Generico-9117-9120-9130.png",
     "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9117 es un modelo industrial que permite limpiar con sistema de marco todo tipo de utensilios, recipientes, cajas, peroles y tolvas. Potencia industrial en tamaño contenido.",
     "specs": {
@@ -132,7 +132,7 @@
     "subtitle": "El lavautensilios industrial para lavar sin límites.",
     "category": "Lavautensilios",
     "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
+    "ergonomicsImage": "/images/ergonomia/Generico-9117-9120-9130.png",
     "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9120 permite limpiar con sistema de marco todo tipo de cajas, tolvas, recipientes y peroles de gran dimensión. Un modelo ideal para la gran industria.",
     "specs": {
@@ -166,7 +166,7 @@
     "subtitle": "La lavadora con capota sin competencia.",
     "category": "Lavautensilios",
     "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
+    "ergonomicsImage": "/images/ergonomia/Generico-9117-9120-9130.png",
     "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9130 es el modelo industrial con sistema de marco más grande. Permite limpiar todo tipo de cajas, tolvas, recipientes y peroles de gran dimensión.",
     "specs": {
@@ -293,7 +293,7 @@
     "gallery": [
       "https://jeros.com/media/qdqd0h3p/300_crates.png?rmode=max&width=480&height=570&quality=76&v=1dbe0662e3d0ac0"
     ],
-    "sectors": ["industria-lactea", "pharma-cosmetica", "metalurgica-auto", "pallets-bidones", "carnica-pesquera", "pasteleria-panaderia", "catering-colectividades"]
+    "sectors": []
   },
   {
     "slug": "jeros-200xl",
@@ -327,6 +327,6 @@
     "gallery": [
       "https://jeros.com/media/azxokrs0/041023-jeros-220xt_37938jpg_compressed.jpeg?rmode=max&width=480&height=570&quality=76&v=1db6e4c5aead1b0"
     ],
-    "sectors": ["catering-colectividades", "pasteleria-panaderia", "fast-food"]
+    "sectors": []
   }
 ]

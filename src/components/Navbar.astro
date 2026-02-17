@@ -15,7 +15,7 @@ const base = import.meta.env.BASE_URL;
                     "hover:text-red-600 transition",
                     { "text-red-600 font-extrabold": activePage === 'home' }
                 ]}>Inicio</a>
-                <a href={`${base}#industrias`} class:list={[
+                <a href={`${base}maquinaria`} class:list={[
                     "hover:text-red-600 transition",
                     { "text-red-600 font-extrabold": activePage === 'sector' || activePage === 'maquina' }
                 ]}>Maquinaria</a>
@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL;
         <div class="hidden lg:flex items-center gap-6">
             <div class="flex gap-4 border-r border-gray-200 pr-6">
                 <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#d10a3c]">NERKON</span>
-                <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#d10a3c]">JEROS</span>
+                <a href={`${base}jeros`} class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] transition-all border-b-2 border-transparent hover:border-[#d10a3c]">JEROS</a>
                 <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#d10a3c]">SERMONT</span>
             </div>
             <a href={`${base}#contacto`} class="bg-[#d10a3c] hover:bg-red-700 text-white px-5 py-2 rounded text-[11px] font-bold transition shadow-lg">PRESUPUESTO</a>
