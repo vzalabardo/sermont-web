@@ -45,3 +45,25 @@ const ogImg = ogImage || '/og-default.jpg';
 {jsonLd && (
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 )}
+
+<!-- Google Analytics 4 — solo se activa si el usuario acepta cookies -->
+<script is:inline>
+  window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  function loadGA() {
+    if (document.getElementById('ga-script')) return;
+    var s = document.createElement('script');
+    s.id = 'ga-script';
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GA_MEASUREMENT_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', window.GA_MEASUREMENT_ID, { anonymize_ip: true });
+  }
+  if (localStorage.getItem('sermont_cookies') === 'accepted') {
+    loadGA();
+  }
+  window.loadGA = loadGA;
+</script>

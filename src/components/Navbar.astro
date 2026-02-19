@@ -6,10 +6,17 @@ const { activePage = 'home' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
-<nav class="fixed w-full z-50 bg-white text-[#0a192f] py-4 px-6 border-b border-gray-200 shadow-sm">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
+<nav class="fixed w-full z-50 bg-white text-[#0a192f] py-8 px-6 border-b border-gray-200 shadow-sm">
+    <div class="max-w-8xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-10">
-            <a href={base} class="text-2xl font-bold tracking-tighter uppercase border-r border-gray-300 pr-8">SERMONT</a>
+            <a href={base} class="border-r border-gray-300 pr-8 py-1">
+                <img 
+                    src="https://sermont.es/wp-content/uploads/2021/08/logo-sermont.png" 
+                    alt="Sermont Logo" 
+                    class="h-5 w-auto"
+                    loading="eager"
+                >
+            </a>
             <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-[#0a192f]">
                 <a href={base} class:list={[
                     "hover:text-red-600 transition",
@@ -26,11 +33,11 @@ const base = import.meta.env.BASE_URL;
         
         <div class="hidden lg:flex items-center gap-6">
             <div class="flex gap-4 border-r border-gray-200 pr-6">
-                <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#d10a3c]">NERKON</span>
-                <a href={`${base}jeros`} class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] transition-all border-b-2 border-transparent hover:border-[#d10a3c]">JEROS</a>
-                <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#d10a3c] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#d10a3c]">SERMONT</span>
+                <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#a6192e] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#a6192e]">NERKON</span>
+                <a href={`${base}jeros`} class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#a6192e] transition-all border-b-2 border-transparent hover:border-[#a6192e]">JEROS</a>
+                <span class="brand-link text-[10px] font-black tracking-[0.2em] text-gray-500 hover:text-[#a6192e] cursor-pointer transition-all border-b-2 border-transparent hover:border-[#a6192e]">SERMONT</span>
             </div>
-            <a href={`${base}#contacto`} class="bg-[#d10a3c] hover:bg-red-700 text-white px-5 py-2 rounded text-[11px] font-bold transition shadow-lg">PRESUPUESTO</a>
+            <a href={`${base}#contacto`} class="bg-[#a6192e] hover:bg-red-700 text-white px-5 py-2 rounded text-[11px] font-bold transition shadow-lg">PRESUPUESTO</a>
         </div>
     </div>
 </nav>

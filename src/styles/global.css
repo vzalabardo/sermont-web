@@ -2,7 +2,16 @@
 
 @theme {
   --font-sans: 'Lato', sans-serif;
-  --color-primary-red: #d10a3c;
+  --color-primary-red: #a6192e;
   --color-primary-dark: #0a192f;
   --color-brand-blue: #0033A0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+}
+
+p, div, span {
+  font-weight: 500;
 }
