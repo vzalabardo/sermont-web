@@ -4,8 +4,8 @@ interface Props {
   text?: string;
 }
 const { 
-  heading = "Lleve su planta al siguiente nivel.", 
-  text = "Consúltenos sin compromiso sobre su proyecto de lavado. Ofrecemos estudios de eficiencia y ROI personalizados." 
+  heading = "CONTACTE CON NOSOTROS", 
+  text = "Consúltenos sin compromiso sobre sus necesidades de limpieza." 
 } = Astro.props;
 ---
 
@@ -14,7 +14,7 @@ const {
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="grid lg:grid-cols-2 gap-20">
             <div>
-                <h3 class="text-red-400 font-bold uppercase tracking-widest text-xs mb-4">Contacto Directo</h3>
+                <h3 class="text-400 font-bold uppercase tracking-widest text-xs mb-4">Contacto Directo</h3>
                 <h2 class="text-5xl font-bold mb-8 leading-tight italic tracking-tighter uppercase">{heading}</h2>
                 <p class="text-gray-400 text-lg mb-12">{text}</p>
                 <div class="space-y-6">
@@ -54,12 +54,34 @@ const {
             <div class="bg-white rounded-xl p-10 text-slate-900 shadow-2xl">
                 <form class="space-y-5">
                     <div class="grid md:grid-cols-2 gap-5">
-                        <input type="text" name="nombre" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Nombre">
-                        <input type="text" name="empresa" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Empresa">
+                        <div>
+                            <input type="text" name="nombre" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Nombre *">
+                        </div>
+                        <div>
+                            <input type="text" name="apellidos" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Apellidos *">
+                        </div>
                     </div>
-                    <input type="email" name="email" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Email corporativo">
-                    <textarea rows="4" name="consulta" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Su consulta..."></textarea>
-                    <button type="submit" class="w-full bg-[#a6192e] hover:bg-red-700 text-white font-bold py-4 rounded transition-all shadow-lg uppercase text-xs tracking-widest">Enviar Solicitud</button>
+                    <input type="text" name="empresa" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Empresa *">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <input type="text" name="poblacion" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Población *">
+                        <input type="text" name="provincia" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Provincia *">
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <input type="email" name="email" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Email *">
+                        <input type="tel" name="telefono" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Teléfono *">
+                    </div>
+                    <textarea rows="5" name="consulta" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Consulta..."></textarea>
+                    <div class="space-y-3 pt-2">
+                        <label class="flex items-start gap-3 cursor-pointer group">
+                            <input type="checkbox" name="privacidad" required class="mt-0.5 w-4 h-4 accent-[#a6192e] shrink-0">
+                            <span class="text-xs text-gray-600 leading-relaxed">He leído y acepto las <a href="/sermont-web/politica-privacidad" class="text-[#a6192e] underline hover:text-red-700">políticas de privacidad</a> <span class="text-[#a6192e]">*</span></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer group">
+                            <input type="checkbox" name="comunicaciones" class="mt-0.5 w-4 h-4 accent-[#a6192e] shrink-0">
+                            <span class="text-xs text-gray-600 leading-relaxed">Acepto recibir comunicaciones comerciales sobre productos de Sermont</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full bg-[#a6192e] hover:bg-red-700 text-white font-bold py-4 rounded transition-all shadow-lg uppercase text-xs tracking-widest">Enviar</button>
                 </form>
             </div>
         </div>
