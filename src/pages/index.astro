@@ -31,13 +31,24 @@ const jsonLd = {
 >
 
     <!-- HERO SECTION -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center text-white px-4 pt-24 bg-cover bg-center" style="background: linear-gradient(rgba(10, 25, 47, 0.70), rgba(10, 25, 47, 0.70)), url('/sermont-web/images/fondo.jpeg'); background-size: cover; background-position: center;">
-        
-        <h1 class="text-5xl md:text-7xl font-bold max-w-5xl mb-8 leading-tight">Soluciones de Lavado Industrial</h1>
-        <p class="text-xl text-gray-300 max-w-2xl mb-12 font-light">Sermont, S.A.  distribuye en España, las mejores marcas internacionales de sistemas de lavado industrial para los siguientes sectores:</p>
+    <section id="hero-section" class="min-h-[85vh] flex flex-col justify-center items-center text-center text-white px-4 pt-24 pb-16 bg-cover bg-center relative overflow-hidden">
+        <!-- Carrusel de fondos -->
+        <div class="absolute inset-0 z-0">
+            {sectors.map((sector, index) => (
+                <div 
+                    class={`hero-bg absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    data-index={index}
+                    style={`background: linear-gradient(rgba(10, 25, 47, 0.70), rgba(10, 25, 47, 0.70)), url('${sector.hero.bgImage}'); background-size: cover; background-position: center;`}
+                ></div>
+            ))}
+        </div>
+
+        <!-- Contenido sobre el fondo -->
+        <h1 class="relative z-10 text-5xl md:text-7xl font-bold max-w-5xl mb-8 leading-tight mx-auto">Soluciones de Lavado Industrial</h1>
+        <p class="relative z-10 text-xl text-gray-300 max-w-2xl mb-12 font-light mx-auto">Sermont, S.A.  distribuye en España, las mejores marcas internacionales de sistemas de lavado industrial para los siguientes sectores:</p>
         
         <!-- SECTOR GRID -->
-        <div id="industrias" class="flex flex-wrap justify-center w-full max-w-7xl mb-10 overflow-visible">
+        <div id="industrias" class="relative z-10 flex flex-wrap justify-center w-full max-w-7xl mb-10 overflow-visible mx-auto">
             
             <!-- FILA 1 (5 ELEMENTOS) -->
             <div class="flex w-full justify-center">
@@ -72,10 +83,31 @@ const jsonLd = {
             </div>
         </div>
 
-        <a href={`${base}maquinaria`} class="bg-white text-[#0a192f] hover:bg-[#a6192e] hover:text-white px-8 py-4 rounded-full font-bold transition shadow-xl uppercase text-sm tracking-wider">
+        <a href={`${base}maquinaria`} class="relative z-10 bg-white text-[#0a192f] hover:bg-[#a6192e] hover:text-white px-8 py-4 rounded-full font-bold transition shadow-xl uppercase text-sm tracking-wider">
             Ver todas las máquinas
         </a>
     </section>
+
+    <script>
+        // Carrusel automático de fondos
+        let currentBgIndex = 0;
+        const backgrounds = document.querySelectorAll('.hero-bg');
+        const totalBackgrounds = backgrounds.length;
+
+        function rotateBackground() {
+            // Ocultar el fondo actual
+            backgrounds[currentBgIndex].style.opacity = '0';
+            
+            // Calcular el siguiente índice
+            currentBgIndex = (currentBgIndex + 1) % totalBackgrounds;
+            
+            // Mostrar el siguiente fondo
+            backgrounds[currentBgIndex].style.opacity = '1';
+        }
+
+        // Rotar cada 5 segundos
+        setInterval(rotateBackground, 5000);
+    </script>
 
     <!-- SOBRE SERMONT -->
     <section id="nosotros" class="py-24 px-6 bg-white">
