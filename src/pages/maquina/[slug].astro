@@ -203,7 +203,7 @@ const breadcrumbs = [
                         </>
                     )}
                 </div>
-                <p class="text-center text-xs text-gray-400 mt-4 italic">Haga clic en la imagen para ampliar</p>
+                <p class="text-center text-xs text-gray-400 mt-8 italic">Haga clic en la imagen para ampliar</p>
             </div>
         </div>
     </section>
@@ -356,8 +356,24 @@ const breadcrumbs = [
 
     <!-- Modal para ampliar imágenes -->
     <div id="imageModal" class="fixed inset-0 z-[1000] hidden items-center justify-center bg-black/90" role="dialog" aria-modal="true">
-        <button class="absolute top-8 right-8 text-white text-3xl cursor-pointer" id="closeModal" aria-label="Cerrar">&times;</button>
-        <img class="max-w-[90%] max-h-[90%]" id="modalImage" alt="Imagen ampliada">
+        <button class="absolute top-8 right-8 text-white text-3xl cursor-pointer hover:text-red-400 transition" id="closeModal" aria-label="Cerrar">&times;</button>
+        
+        <!-- Botones de navegación en el modal -->
+        <button class="absolute left-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-3 rounded-full transition" id="modalPrevBtn" aria-label="Imagen anterior">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button class="absolute right-8 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 p-3 rounded-full transition" id="modalNextBtn" aria-label="Imagen siguiente">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+        
+        <!-- Botón de pausa/play -->
+        <button class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-full transition flex items-center gap-2" id="playPauseBtn" aria-label="Pausar/Reproducir">
+            <svg class="w-5 h-5 text-white" id="pauseIcon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+            <svg class="w-5 h-5 text-white hidden" id="playIcon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+            <span class="text-white text-sm font-medium" id="playPauseText">Pausar</span>
+        </button>
+        
+        <img class="max-w-[90%] max-h-[90%] object-contain" id="modalImage" alt="Imagen ampliada">
     </div>
 
 </BaseLayout>
@@ -370,6 +386,8 @@ const breadcrumbs = [
     const prevBtn = document.getElementById('prevBtn');
     const indicators = document.querySelectorAll('#carousel-indicators button');
     let currentIndex = 0;
+    let autoPlayInterval: number | null = null;
+    let isAutoPlaying = true;
 
     function goToSlide(index: number) {
         if (!slides.length) return;
@@ -380,27 +398,136 @@ const breadcrumbs = [
             ind.classList.toggle('bg-[#a6192e]', i === currentIndex);
             ind.classList.toggle('bg-white/50', i !== currentIndex);
         });
+        updateModalImage();
     }
 
-    nextBtn?.addEventListener('click', () => { goToSlide((currentIndex + 1) % slides.length); });
-    prevBtn?.addEventListener('click', () => { goToSlide((currentIndex - 1 + slides.length) % slides.length); });
+    function nextSlide() {
+        goToSlide((currentIndex + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        goToSlide((currentIndex - 1 + slides.length) % slides.length);
+    }
+
+    function startAutoPlay() {
+        if (autoPlayInterval) return;
+        isAutoPlaying = true;
+        autoPlayInterval = window.setInterval(nextSlide, 4000);
+        updatePlayPauseButton();
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+        isAutoPlaying = false;
+        updatePlayPauseButton();
+    }
+
+    function toggleAutoPlay() {
+        if (isAutoPlaying) {
+            stopAutoPlay();
+        } else {
+            startAutoPlay();
+        }
+    }
+
+    function updatePlayPauseButton() {
+        const pauseIcon = document.getElementById('pauseIcon');
+        const playIcon = document.getElementById('playIcon');
+        const playPauseText = document.getElementById('playPauseText');
+        
+        if (isAutoPlaying) {
+            pauseIcon?.classList.remove('hidden');
+            playIcon?.classList.add('hidden');
+            if (playPauseText) playPauseText.textContent = 'Pausar';
+        } else {
+            pauseIcon?.classList.add('hidden');
+            playIcon?.classList.remove('hidden');
+            if (playPauseText) playPauseText.textContent = 'Reproducir';
+        }
+    }
+
+    nextBtn?.addEventListener('click', () => { 
+        stopAutoPlay();
+        nextSlide();
+    });
+    prevBtn?.addEventListener('click', () => { 
+        stopAutoPlay();
+        prevSlide();
+    });
     indicators.forEach((ind) => {
-        ind.addEventListener('click', () => { goToSlide(Number(ind.getAttribute('data-index'))); });
+        ind.addEventListener('click', () => { 
+            stopAutoPlay();
+            goToSlide(Number(ind.getAttribute('data-index')));
+        });
     });
     window.addEventListener('resize', () => goToSlide(currentIndex));
+
+    // Iniciar auto-play si hay más de una imagen
+    if (slides.length > 1) {
+        startAutoPlay();
+    }
 
     // Image Modal
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage') as HTMLImageElement;
     const closeModalBtn = document.getElementById('closeModal');
+    const modalNextBtn = document.getElementById('modalNextBtn');
+    const modalPrevBtn = document.getElementById('modalPrevBtn');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    let modalCurrentIndex = 0;
 
-    document.querySelectorAll('.carousel-slide img').forEach((img) => {
+    function updateModalImage() {
+        if (modal?.style.display === 'flex' && modalImg && slides[currentIndex]) {
+            const img = slides[currentIndex].querySelector('img') as HTMLImageElement;
+            if (img) {
+                modalImg.src = img.src;
+                modalCurrentIndex = currentIndex;
+            }
+        }
+    }
+
+    function goToModalSlide(index: number) {
+        if (!slides.length) return;
+        modalCurrentIndex = index;
+        currentIndex = index;
+        const img = slides[modalCurrentIndex].querySelector('img') as HTMLImageElement;
+        if (img && modalImg) {
+            modalImg.src = img.src;
+        }
+        // Actualizar también el carrusel principal
+        const slideWidth = (slides[0] as HTMLElement).getBoundingClientRect().width;
+        (track as HTMLElement).style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+        indicators.forEach((ind, i) => {
+            ind.classList.toggle('bg-[#a6192e]', i === currentIndex);
+            ind.classList.toggle('bg-white/50', i !== currentIndex);
+        });
+    }
+
+    document.querySelectorAll('.carousel-slide img').forEach((img, index) => {
         img.addEventListener('click', () => {
             if (modal && modalImg) {
                 modal.style.display = 'flex';
                 modalImg.src = (img as HTMLImageElement).src;
+                modalCurrentIndex = index;
+                currentIndex = index;
             }
         });
+    });
+
+    modalNextBtn?.addEventListener('click', () => {
+        goToModalSlide((modalCurrentIndex + 1) % slides.length);
+    });
+
+    modalPrevBtn?.addEventListener('click', () => {
+        goToModalSlide((modalCurrentIndex - 1 + slides.length) % slides.length);
+    });
+
+    playPauseBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleAutoPlay();
     });
 
     function closeModal() {
@@ -408,6 +535,19 @@ const breadcrumbs = [
     }
     closeModalBtn?.addEventListener('click', closeModal);
     modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+    // Navegación con teclado en el modal
+    document.addEventListener('keydown', (e) => {
+        if (modal?.style.display === 'flex') {
+            if (e.key === 'ArrowRight') {
+                goToModalSlide((modalCurrentIndex + 1) % slides.length);
+            } else if (e.key === 'ArrowLeft') {
+                goToModalSlide((modalCurrentIndex - 1 + slides.length) % slides.length);
+            } else if (e.key === 'Escape') {
+                closeModal();
+            }
+        }
+    });
 
     // Related Products Carousel
     const relCarousel = document.getElementById('related-products-carousel');

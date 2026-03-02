@@ -4,10 +4,10 @@
     "model": "9110",
     "title": "JEROS Modelo 9110",
     "subtitle": "Lavavajillas industrial pequeño en tamaño, grande en capacidad.",
-    "category": "Lavautensilios",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "category": "Sistema de Lavado",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/ergonomia-compacta.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9110 es el más compacto de la gama y se trata de un modelo ideal para pequeñas zonas de trabajo dónde se deben de limpiar y desinfectar todo tipo de utensilios. Un modelo ideal para la pequeña industria o espacios reducidos.",
     "specs": {
       "dimensions": "690 x 635 x 590",
@@ -41,9 +41,13 @@
       ]
     },
     "gallery": [
-      "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570",
-      "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570",
-      "https://jeros.com/media/wzykleei/9110_butcher.png?rmode=max&width=480&height=570"
+      "/sermont-web/images/carrousel/9110/9110_butcher.png",
+      "/sermont-web/images/carrousel/9110/9110_model.jpg",
+      "/sermont-web/images/carrousel/9110/9110_baker.jpg",
+      "/sermont-web/images/carrousel/9110/9110_open.jpg",
+      "/sermont-web/images/carrousel/9110/9110_crates.jpg",
+      "/sermont-web/images/carrousel/9110/9110_close.jpg",
+      "/sermont-web/images/carrousel/9110/9110_panel.jpg"
     ],
     "sectors": ["pharma-cosmetica", "fast-food", "pasteleria-panaderia"]
   },
@@ -52,10 +56,10 @@
     "model": "9115",
     "title": "JEROS Modelo 9115",
     "subtitle": "La lavadora de utensilios más polivalente.",
-    "category": "Lavautensilios",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "category": "Sistema de Lavado",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/ergonomia-compacta.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9115 es un modelo superior en tamaño al 9110 ofreciendo una mayor capacidad para limpiar y desinfectar todo tipo de utensilios, recipientes, cajas, peroles y tolvas.",
     "specs": {
       "dimensions": "810 x 635 x 610",
@@ -89,7 +93,12 @@
       ]
     },
     "gallery": [
-      "https://jeros.com/media/tzlhuq0q/9115_mix.png?rmode=max&width=480&height=570"
+      "/sermont-web/images/carrousel/9115/9115_mix.png",
+      "/sermont-web/images/carrousel/9115/9115_model_mix.S.jpg",
+      "/sermont-web/images/carrousel/9115/9115_model_crates.S.jpg",
+      "/sermont-web/images/carrousel/9115/9115.open.S.jpg",
+      "/sermont-web/images/carrousel/9115/9115_crates.S.jpg",
+      "/sermont-web/images/carrousel/9115/9115_Mesh_tray.S.jpg"
     ],
     "sectors": ["industria-lactea", "pharma-cosmetica", "fast-food", "pasteleria-panaderia"]
   },
@@ -98,10 +107,10 @@
     "model": "9117",
     "title": "JEROS Modelo 9117",
     "subtitle": "El Lavautensilios industrial más compacto.",
-    "category": "Lavautensilios",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/Generico-9117-9120-9130.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "category": "Sistema de Lavado",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/Generico-9117-9120-9130.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9117 es un modelo industrial que permite limpiar con sistema de marco todo tipo de utensilios, recipientes, cajas, peroles y tolvas. Potencia industrial en tamaño contenido.",
     "specs": {
       "dimensions": "810 x 635 x 645",
@@ -123,7 +132,11 @@
       ]
     },
     "gallery": [
-      "https://jeros.com/media/dbkjl04s/9117_mix.png?rmode=max&width=480&height=570"
+      "/sermont-web/images/carrousel/9117/9117_mix.png",
+      "/sermont-web/images/carrousel/9117/9117_model.jpg",
+      "/sermont-web/images/carrousel/9117/9117_open_s.jpg",
+      "/sermont-web/images/carrousel/9117/9117_closed_s.jpg",
+      "/sermont-web/images/carrousel/9117/9117_crates.jpg"
     ],
     "sectors": ["industria-lactea", "pharma-cosmetica", "metalurgica-auto", "pallets-bidones", "pasteleria-panaderia", "catering-colectividades"]
   },
@@ -132,10 +145,10 @@
     "model": "9120",
     "title": "JEROS Modelo 9120",
     "subtitle": "El lavautensilios industrial para lavar sin límites.",
-    "category": "Lavautensilios",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/Generico-9117-9120-9130.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "category": "Sistema de Lavado",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/Generico-9117-9120-9130.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9120 permite limpiar con sistema de marco todo tipo de cajas, tolvas, recipientes y peroles de gran dimensión. Un modelo ideal para la gran industria.",
     "specs": {
       "dimensions": "1010 x 635 x 645",
@@ -157,7 +170,13 @@
       ]
     },
     "gallery": [
-      "https://jeros.com/media/lsinfpxf/9120_baker.png?rmode=max&width=480&height=570"
+      "/sermont-web/images/carrousel/9120/9120_baker.png",
+      "/sermont-web/images/carrousel/9120/9120_model_1.S.jpg",
+      "/sermont-web/images/carrousel/9120/9120_model_2.S.jpg",
+      "/sermont-web/images/carrousel/9120/9120_open.S.jpg",
+      "/sermont-web/images/carrousel/9120/9120_closed.S.jpg",
+      "/sermont-web/images/carrousel/9120/9120_gastro.S.jpg",
+      "/sermont-web/images/carrousel/9120/9120_Mesh_tray.S.jpg"
     ],
     "sectors": ["industria-lactea", "pharma-cosmetica", "metalurgica-auto", "pallets-bidones", "carnica-pesquera", "pasteleria-panaderia", "catering-colectividades"]
   },
@@ -166,10 +185,10 @@
     "model": "9130",
     "title": "JEROS Modelo 9130",
     "subtitle": "La lavadora con capota sin competencia.",
-    "category": "Lavautensilios",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/Generico-9117-9120-9130.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "category": "Sistema de Lavado",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/Generico-9117-9120-9130.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "El modelo 9130 es el modelo industrial con sistema de marco más grande. Permite limpiar todo tipo de cajas, tolvas, recipientes y peroles de gran dimensión.",
     "specs": {
       "dimensions": "1290 x 735 x 645",
@@ -191,7 +210,13 @@
       ]
     },
     "gallery": [
-      "https://jeros.com/media/hlzbs3ma/9130_open_mix.png?rmode=max&width=480&height=570"
+      "/sermont-web/images/carrousel/9130/9130_open_mix.png",
+      "/sermont-web/images/carrousel/9130/9130_model_baker.S.jpg",
+      "/sermont-web/images/carrousel/9130/9130_model_Industrial.S.jpg",
+      "/sermont-web/images/carrousel/9130/9130_model_crates.S.jpg",
+      "/sermont-web/images/carrousel/9130/9130_open.S.jpg",
+      "/sermont-web/images/carrousel/9130/9130_close.S.jpg",
+      "/sermont-web/images/carrousel/9130/9130_crates.S.jpg"
     ],
     "sectors": ["industria-lactea", "pharma-cosmetica", "metalurgica-auto", "pallets-bidones", "carnica-pesquera", "pasteleria-panaderia", "catering-colectividades"]
   },
@@ -201,9 +226,9 @@
     "title": "JEROS ACE",
     "subtitle": "Desinfecta y Limpia multicabezales sin peligro.",
     "category": "Sistema de Lavado",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/ergonomia-compacta.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "El sistema ACE es la solución definitiva para limpiar y desinfectar elementos delicados de multicabezales sin riesgo de roturas, utilizando soportes móviles que se deslizan al interior de la máquina.",
     "specs": {
       "dimensions": "Para mods. 8150 / 8160",
@@ -235,9 +260,9 @@
     "title": "JEROS Bin Barrel",
     "subtitle": "Limpia y desinfecta Barreños con sistema CIP.",
     "category": "Sistema de Lavado",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/ergonomia-compacta.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "La serie Bin Barrel ofrece un sistema de lavado CIP (Clean In Place) integrado. Garantizamos la limpieza de interiores y exteriores de bidones o elementos huecos con sistema de chorro personalizado.",
     "specs": {
       "dimensions": "Para mods. 9117/20/30",
@@ -269,9 +294,9 @@
     "title": "JEROS 300",
     "subtitle": "Túnel de cajas para 350 cajas/hora. Limpia, desinfecta y seca sin preocupaciones.",
     "category": "Túnel de Lavado",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/ergonomia-compacta.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "Túnel de lavado compacto y eficiente diseñado para procesar hasta 350 cajas por hora, garantizando limpieza, desinfección y secado.",
     "specs": {
       "dimensions": "Consultar",
@@ -303,9 +328,9 @@
     "title": "JEROS 200XL",
     "subtitle": "Túnel de cajas para 300 cajas/hora. Limpia, desinfecta y seca en el menor espacio posible.",
     "category": "Túnel de Lavado",
-    "heroImage": "/images/backgrounds/fondo-jeros-std.jpg",
-    "ergonomicsImage": "/images/ergonomia/ergonomia-compacta.png",
-    "maintenanceImage": "/images/ergonomia/filtro-boquillas.png",
+    "heroImage": "/sermont-web/images/backgrounds/fondo-jeros-std.jpg",
+    "ergonomicsImage": "/sermont-web/images/ergonomia/ergonomia-compacta.png",
+    "maintenanceImage": "/sermont-web/images/ergonomia/filtro-boquillas.png",
     "description": "La solución perfecta cuando el espacio es crítico. Un túnel capaz de procesar 300 cajas por hora ocupando el mínimo espacio posible en planta.",
     "specs": {
       "dimensions": "Compacto XL",
@@ -327,7 +352,9 @@
       ]
     },
     "gallery": [
-      "https://jeros.com/media/azxokrs0/041023-jeros-220xt_37938jpg_compressed.jpeg?rmode=max&width=480&height=570&quality=76&v=1db6e4c5aead1b0"
+      "/sermont-web/images/carrousel/200 XL/200 XL.jpg",
+      "/sermont-web/images/carrousel/200 XL/200 XL m Model.jpg",
+      "/sermont-web/images/carrousel/200 XL/200 XL detail 2.jpg"
     ],
     "sectors": []
   }

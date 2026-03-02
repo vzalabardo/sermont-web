@@ -7,7 +7,11 @@ import sectors from '../data/sectors.json';
 
 const base = import.meta.env.BASE_URL;
 
-const categories = [...new Set(maquinas.map(m => m.category))];
+// Agrupar categorías en dos grupos principales
+const categoryGroups = [
+    { label: 'Sistemas de Lavado Independientes', values: ['Sistema de Lavado'] },
+    { label: 'Sistemas de Lavado Túnel', values: ['Túnel de Lavado'] }
+];
 
 const jsonLd = {
     "@context": "https://schema.org",
@@ -89,9 +93,9 @@ const breadcrumbs = [
                             <button data-category="all" class="filter-btn active-filter px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">
                                 Todas
                             </button>
-                            {categories.map(cat => (
-                                <button data-category={cat} class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">
-                                    {cat}
+                            {categoryGroups.map(group => (
+                                <button data-category={JSON.stringify(group.values)} class="filter-btn px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all">
+                                    {group.label}
                                 </button>
                             ))}
                         </div>
@@ -226,7 +230,15 @@ const breadcrumbs = [
                 subtitle.includes(searchTerm) || 
                 description.includes(searchTerm);
 
-            const matchesCategory = activeCategory === 'all' || category === activeCategory;
+            let matchesCategory = activeCategory === 'all';
+            if (!matchesCategory && activeCategory !== 'all') {
+                try {
+                    const categoryArray = JSON.parse(activeCategory);
+                    matchesCategory = categoryArray.includes(category);
+                } catch {
+                    matchesCategory = category === activeCategory;
+                }
+            }
             const matchesSector = activeSector === 'all' || sectors.includes(activeSector);
 
             if (matchesSearch && matchesCategory && matchesSector) {
@@ -270,7 +282,8 @@ const breadcrumbs = [
         btn.addEventListener('click', () => {
             categoryBtns.forEach(b => b.classList.remove('active-filter'));
             btn.classList.add('active-filter');
-            activeCategory = (btn as HTMLElement).dataset.category || 'all';
+            const categoryData = (btn as HTMLElement).dataset.category || 'all';
+            activeCategory = categoryData;
             filterMachines();
         });
     });
