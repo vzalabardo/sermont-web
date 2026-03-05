@@ -51,26 +51,22 @@ const {
                 </div>
             </div>
 
-            <div class="bg-white rounded-xl p-10 text-slate-900 shadow-2xl">
-                <form class="space-y-5">
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <div>
-                            <input type="text" name="nombre" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Nombre *">
-                        </div>
-                        <div>
-                            <input type="text" name="apellidos" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Apellidos *">
-                        </div>
+            <div class="bg-white rounded-xl p-6 md:p-10 text-slate-900 shadow-2xl">
+                <form class="space-y-3 md:space-y-5">
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-5">
+                        <input type="text" name="nombre" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Nombre *">
+                        <input type="text" name="apellidos" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Apellidos *">
                     </div>
-                    <input type="text" name="empresa" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Empresa *">
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <input type="text" name="poblacion" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Población *">
-                        <input type="text" name="provincia" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Provincia *">
+                    <input type="text" name="empresa" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Empresa *">
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-5">
+                        <input type="text" name="poblacion" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Población *">
+                        <input type="text" name="provincia" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Provincia *">
                     </div>
-                    <div class="grid md:grid-cols-2 gap-5">
-                        <input type="email" name="email" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Email *">
-                        <input type="tel" name="telefono" required class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Teléfono *">
+                    <div class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-5">
+                        <input type="email" name="email" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Email *">
+                        <input type="tel" name="telefono" required class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Teléfono *">
                     </div>
-                    <textarea rows="5" name="consulta" class="input-field w-full p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Consulta..."></textarea>
+                    <textarea rows="3" name="consulta" class="input-field w-full p-3 md:p-4 rounded text-sm bg-gray-50 border border-gray-200 focus:border-[#a6192e] focus:bg-white focus:outline-none focus:ring-3 focus:ring-[#a6192e]/10 transition-all" placeholder="Consulta..."></textarea>
                     <div class="space-y-3 pt-2">
                         <label class="flex items-start gap-3 cursor-pointer group">
                             <input type="checkbox" name="privacidad" required class="mt-0.5 w-4 h-4 accent-[#a6192e] shrink-0">

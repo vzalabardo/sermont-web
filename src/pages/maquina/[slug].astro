@@ -72,20 +72,20 @@ const breadcrumbs = [
     </div>
 
     <!-- HERO DEL PRODUCTO -->
-    <section class="py-12 text-white bg-cover bg-center" style="background: linear-gradient(rgba(10, 25, 47, 0.70), rgba(10, 25, 47, 0.70)), url('/sermont-web/images/fondo.webp'); background-size: cover; background-position: center;">
-        <div class="max-w-7xl mx-auto px-6">
-            <p class="text-sm font-bold uppercase tracking-widest mb-4 text-red-400">{maquina.category}</p>
-            <h1 class="text-5xl md:text-6xl font-black leading-tight uppercase italic tracking-tighter">
+    <section class="py-8 md:py-12 text-white bg-cover bg-center" style="background: linear-gradient(rgba(10, 25, 47, 0.70), rgba(10, 25, 47, 0.70)), url('/sermont-web/images/fondo.webp'); background-size: cover; background-position: center;">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <p class="text-xs font-bold uppercase tracking-widest mb-2 md:mb-4 text-red-400">{maquina.category}</p>
+            <h1 class="text-3xl md:text-6xl font-black leading-tight uppercase italic tracking-tighter">
                 {maquina.title.split(' ').slice(0, 1)}<br>{maquina.title.split(' ').slice(1).join(' ')}
             </h1>
         </div>
     </section>
 
     <!-- DESCRIPCIÓN DEL PRODUCTO Y GALERÍA -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
-            <!-- Columna Izquierda: Descripción -->
-            <div class="flex flex-col justify-center">
+    <section class="py-8 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-8 md:gap-16">
+            <!-- Columna Izquierda: Descripción (en móvil va primero) -->
+            <div class="flex flex-col justify-center order-1 lg:order-1">
                 <h2 class="text-3xl font-black uppercase tracking-tighter mb-6 text-[#0a192f]">
                     {maquina.subtitle}
                 </h2>
@@ -95,10 +95,10 @@ const breadcrumbs = [
                 </p>
 
                 <!-- Cards de características -->
-                <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     
                     <!-- Card 1: Dimensiones (full width) -->
-                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#0033A0]/30 transition-all group col-span-2">
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#0033A0]/30 transition-all group sm:col-span-2">
                         <div class="flex items-start gap-5">
                             <div class="w-12 h-12 rounded-full bg-blue-50 text-[#0033A0] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
@@ -165,16 +165,16 @@ const breadcrumbs = [
                 </div>
             </div>
 
-            <!-- Columna Derecha: Galería -->
-            <div class="relative">
-                <div class="bg-gray-50 p-8 border border-gray-200 shadow-sm rounded-lg overflow-hidden" id="carousel-container">
+            <!-- Columna Derecha: Galería (en móvil va después) -->
+            <div class="relative order-2 lg:order-2">
+                <div class="bg-gray-50 p-4 md:p-8 border border-gray-200 shadow-sm rounded-lg overflow-hidden" id="carousel-container">
                     <div class="flex transition-transform duration-500 ease-in-out" id="product-carousel">
                         {maquina.gallery.map((img, i) => (
-                            <div class="min-w-full flex justify-center items-center p-4 cursor-zoom-in carousel-slide">
+                            <div class="min-w-full flex justify-center items-center p-2 md:p-4 cursor-zoom-in carousel-slide">
                                 <img 
                                     src={img} 
                                     alt={`${maquina.title} Vista ${i + 1}`} 
-                                    class="max-h-[500px] object-contain"
+                                    class="max-h-[280px] md:max-h-[500px] w-full object-contain"
                                     loading={i === 0 ? "eager" : "lazy"}
                                     width="480"
                                     height="570"
@@ -210,8 +210,8 @@ const breadcrumbs = [
 
     <!-- SECCIÓN ERGONOMÍA -->
     <section class="py-8 bg-slate-50 border-t border-gray-100 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                 <div class="relative order-last md:order-first">
                     <div class="absolute -top-4 -left-4 w-24 h-24 bg-[#0033A0] opacity-5 rounded-full z-0"></div>
                     <img 
@@ -239,9 +239,9 @@ const breadcrumbs = [
     </section>
 
     <!-- SECCIÓN MANTENIMIENTO Y TECNOLOGÍA -->
-    <section class="py-24 bg-slate-50 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-20 items-center">
+    <section class="py-10 md:py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="grid md:grid-cols-2 gap-8 md:gap-20 items-center">
                 <div>
                     <h2 class="text-3xl font-black text-[#0a192f] mb-8 leading-tight uppercase italic">
                         Mantenimiento Simplificado <br><span class="text-red-600">Nada de que preocuparse</span>
@@ -293,11 +293,11 @@ const breadcrumbs = [
     </section>
 
     <!-- SECCIÓN DE VÍDEO -->
-    <section id="video-section" class="py-16 bg-white border-t border-gray-100">
-        <div class="max-w-5xl mx-auto px-6 text-center">
-            <h3 class="text-2xl font-black uppercase tracking-tighter mb-8">Vea el {maquina.title} en acción</h3>
+    <section id="video-section" class="py-10 md:py-16 bg-white border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-4 md:px-6 text-center">
+            <h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter mb-6 md:mb-8">Vea el {maquina.title} en acción</h3>
             <div class="bg-gray-200 rounded-lg overflow-hidden shadow-xl group cursor-pointer relative">
-                <div class="w-full h-[400px] flex items-center justify-center bg-[#0a192f] text-white transition-colors group-hover:bg-[#0033A0]">
+                <div class="w-full h-[220px] md:h-[400px] flex items-center justify-center bg-[#0a192f] text-white transition-colors group-hover:bg-[#0033A0]">
                     <div class="text-center">
                         <svg class="w-20 h-20 text-white mx-auto mb-4 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
                         <p class="text-xl font-bold uppercase tracking-widest">[ Ver Vídeo Demostrativo ]</p>
@@ -380,6 +380,7 @@ const breadcrumbs = [
 
 <script>
     // Carousel
+    const container = document.getElementById('carousel-container');
     const track = document.getElementById('product-carousel');
     const slides = track ? Array.from(track.children) : [];
     const nextBtn = document.getElementById('nextBtn');
@@ -389,10 +390,14 @@ const breadcrumbs = [
     let autoPlayInterval: number | null = null;
     let isAutoPlaying = true;
 
+    function getSlideWidth(): number {
+        return container ? container.offsetWidth : 0;
+    }
+
     function goToSlide(index: number) {
         if (!slides.length) return;
         currentIndex = index;
-        const slideWidth = (slides[0] as HTMLElement).getBoundingClientRect().width;
+        const slideWidth = getSlideWidth();
         (track as HTMLElement).style.transform = `translateX(-${slideWidth * currentIndex}px)`;
         indicators.forEach((ind, i) => {
             ind.classList.toggle('bg-[#a6192e]', i === currentIndex);
@@ -463,7 +468,29 @@ const breadcrumbs = [
             goToSlide(Number(ind.getAttribute('data-index')));
         });
     });
+
+    // Recalcular al redimensionar
     window.addEventListener('resize', () => goToSlide(currentIndex));
+
+    // ResizeObserver para recalcular cuando el contenedor cambia de tamaño (layout móvil)
+    if (container && typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(() => goToSlide(currentIndex)).observe(container);
+    }
+
+    // Soporte táctil swipe en móvil
+    let touchStartX = 0;
+    let touchEndX = 0;
+    container?.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    container?.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+            stopAutoPlay();
+            diff > 0 ? nextSlide() : prevSlide();
+        }
+    }, { passive: true });
 
     // Iniciar auto-play si hay más de una imagen
     if (slides.length > 1) {
